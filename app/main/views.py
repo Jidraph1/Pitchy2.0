@@ -2,7 +2,7 @@ from flask import render_template
 
 
 #main view
-@app.route('/')
+@main.route('/')
 def index():
 
     """
@@ -11,3 +11,4 @@ def index():
     """
     title = 'Home Page'
     return render_template('index.html', title = title)
+

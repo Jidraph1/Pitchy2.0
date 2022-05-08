@@ -9,8 +9,22 @@
     {% else %}
     <title>Welcome to Pitchy2.0</title>
     {% endif %}
+
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+
 </head>
 <body>
-    
+    <div class="container-fluid">
+        <div class="jumbotron text-centre">
+            <p class="wrd">Welcome to</p>
+            <h1 class="display-4 intro">PITCHY2.0</h1>
+            <p class="wrd">Gone in 60seconds</p>
+
+            <a href="{{url_for('main.signup')}}"><button class="btn btn-light">Sign Up</button></a>
+            <a href="{{ url_for('main.login') }}"><button type="button" class="btn btn-dark">Login</button></a>
+
+
+        </div>
+    </div>
 </body>
 </html>
