@@ -5,16 +5,22 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
 login_manager = LoginManager()
+login_manager.login_view = 'login'
+bootstrap = Bootstrap()
+db = SQLAlchemy()
+
 
 def create_app(config_name):
-# Initializing application
+
+    # Initializing application
     app = Flask(__name__)
 
-# Setting up configuration
+    # Setting up configuration
     app.config.from_object(DevConfig)
 
     #initialising flask extensions
+    bootstrap.init_app(app)
     db.init_app(app)
-    bootstrap = Bootsrap
+    login_manager.init_app(app)g
 
     return app
