@@ -42,3 +42,28 @@ class PitchModelTest(unittest.TestCase):
             self.assertEquals(self.new_pitch.title, 'pitch')
             self.assertEquals(self.new_pitch.category, 'business')
 
+class CommentModelTest(unittest.TestCase):
+        '''
+        Test class to test the behavior of the Comment class
+        '''
+
+        def setUp(self):
+            '''
+            Set up method that will run before every Test
+            '''
+            self.new_comment = Comment(1, 1,' comment')
+
+        def test_instance(self):
+            '''
+            '''
+            self.assertTrue(isinstance(self.new_comment, Comment))
+
+        def test_to_check_instance_variables(self):
+            '''
+            '''
+            self.assertEquals(self.new_pitch.id, 1)
+            self.assertEquals(self.new_comment.owner_id, 1)
+            self.assertEquals(self.new_comment.content, 'comment')
+            
+if __name__ == '__main__':
+    unittest.main()
