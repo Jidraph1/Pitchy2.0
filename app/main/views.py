@@ -1,5 +1,5 @@
 from flask import render_template
-from app import app
+
 
 # Views
 @app.route('/')
@@ -11,7 +11,7 @@ def index():
     title = "Home page"
     return render_template('index.html', title = title)
 
-@app.route('/signup/<signup_id>')
+@app.route('/signup')
 def signup():
     """
     View sign up page
