@@ -18,5 +18,10 @@ class Pitch(db.Model):
     id = cd.Column(db.Integer, primary_key = True)
     owner_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     description = db.Column(db.String())
-    
+    title = db.Column(db,String())
+    category = db.Column(db.String(225))
+
+    def __repr__(self):
+        return f'Pitch {self.description}'
+
 
