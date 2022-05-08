@@ -1,5 +1,5 @@
 import unittest
-from .models import User
+from .models import User, Pitch
 
 #Test classes
 class UserModelTest(unittest.TestCase):
@@ -16,3 +16,29 @@ class UserModelTest(unittest.TestCase):
 
     def test_password_verification(self):
         self.assertTrue(self.new_user.verify_password('banana'))
+
+class PitchModelTest(unittest.TestCase):
+        '''
+        Test class to test the behavior of the Pitch class
+        '''
+
+        def setUp(self):
+            '''
+            Set up method that will run before every Test
+            '''
+            self.new_pitch = Pitch(1, 1,' pitch', 'pitch','pitch')
+
+        def test_instance(self):
+            '''
+            '''
+            self.assertTrue(isinstance(self.new_pitch, Pitch))
+
+        def test_to_check_instance_variables(self):
+            '''
+            '''
+            self.assertEquals(self.new_pitch.id, 1)
+            self.assertEquals(self.new_pitch.owner_id, 1)
+            self.assertEquals(self.new_pitch.description, 'pitch')
+            self.assertEquals(self.new_pitch.title, 'pitch')
+            self.assertEquals(self.new_pitch.category, 'business')
+
