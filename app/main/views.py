@@ -25,3 +25,18 @@ def signup():
         db.session.commit()
         return redirect('/success')
     return render_template('signup.html', form=form)
+
+@main.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        user = Users.query.filter_by(username=form.username.data).first()
+        if user:
+            if check_password_hash(user.password, form.password.data):
+                login_user(user)
+                return redirect(url_for('main.dashboard'))
+         
+        return redirect('failure')
+    
+  
+    return render_template('login.html', form=form )
