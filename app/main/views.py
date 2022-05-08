@@ -9,5 +9,5 @@ def index():
     View root page function that returns the index page and its data
     
     """
-    title = 'Login Page'
-    return render_template('login.html', title = title)
+    title = 'Home Page'
+    return render_template('index.html', title = title)
