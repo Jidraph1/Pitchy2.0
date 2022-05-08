@@ -1,7 +1,10 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+from config import config_options
 from flask_bootstrap import Bootstrap
-from .config import DevConfig
+from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager
+
+login_manager = LoginManager()
 
 def create_app(config_name):
 # Initializing application
