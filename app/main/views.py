@@ -45,3 +45,8 @@ def login():
 def success():
     
     return render_template('success.html')
+
+@main.route('/success')
+def failure():
+    
+    return render_template('failure.html')
