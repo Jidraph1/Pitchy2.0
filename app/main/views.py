@@ -40,3 +40,8 @@ def login():
     
   
     return render_template('login.html', form=form )
+
+@main.route('/success')
+def success():
+    
+    return render_template('success.html')
