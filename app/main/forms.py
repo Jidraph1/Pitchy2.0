@@ -1,6 +1,7 @@
-from flask_wtf import FlaskFofrm
-from wtforms import StringField, TextAreaField, SubmitField, BooleanField
-from wtforms.validators import InputRequired
+from wtforms import StringField, PasswordField, BooleanField
+from flask_wtf import FlaskForm, form
+from wtforms.validators import InputRequired, Email
+from wtforms.widgets import TextArea
 
 class LoginForm(FlaskForm):
     sd
