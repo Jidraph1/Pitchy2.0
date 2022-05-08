@@ -10,3 +10,5 @@ class Users(db.Model):
     comments = db.relationship('Comment', backref='owner')
     def __repr__(self):
         return f"User('{self.username}')"
+
+        
