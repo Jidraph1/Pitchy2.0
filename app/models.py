@@ -13,15 +13,18 @@ class User(db.Model):
         return f'User {self.username}'
 
 class Pitch(db.Model):
+    '''
+    '''
     __tablename__ = 'pitches'
 
-    id = cd.Column(db.Integer, primary_key = True)
-    owner_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    description = db.Column(db.String())
-    title = db.Column(db,String())
-    category = db.Column(db.String(225))
-
+    id = db.Column(db.Integer, primary_key=True)
+    owner_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    description = db.Column(db.String(), index=True)
+    title = db.Column(db.String())
+    category = db.Column(db.String(255), nullable=False)  
     def __repr__(self):
-        return f'Pitch {self.description}'
+            return f'Pitch {self.description}'
+
+ 
 
 
