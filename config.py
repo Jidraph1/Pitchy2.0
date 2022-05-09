@@ -1,11 +1,11 @@
-
+import os
 
 class Config:
     '''
     General configuration parent class
     '''
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://jidraph:6720@localhost/pitchy'
-
+    SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 class ProdConfig(Config):
@@ -15,6 +15,7 @@ class ProdConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL").replace("://", "ql://", 1)
     pass
 
 
@@ -25,7 +26,8 @@ class DevConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://jidraph:6720@localhost/pitchy'
+    SECRET_KEY = 'thisismysecret'
     DEBUG = True
 
 config_options = {
