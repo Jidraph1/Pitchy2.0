@@ -17,11 +17,11 @@ class Users(UserMixin, db.Model):
     comments = db.relationship('Comment', backref='owner')
 
     def __repr__(self):
-        return f"User('{self.username}')"
+        return f"Users('{self.username}')"
 
     @login_manager.user_loader
     def load_user(user_id):
-        return User.query.get(int(user_id))
+        return Users.query.get(int(user_id))
 
 class Pitch(db.Model):
     '''
