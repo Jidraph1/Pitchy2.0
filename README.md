@@ -6,8 +6,8 @@ Pitchy2.0 is an improvement on the previous Pitchy app. Pitchy2.0 allows you to 
 
 # Live link
 The application is deployed to Heroku under the below live link:
-Heroku; https://pitchy-200.herokuapp.com/ (some minor glitches after the login)
-Aws:
+
+https://pitchy-200.herokuapp.com/
 
 # Technologies used
 The project is solely build using:
