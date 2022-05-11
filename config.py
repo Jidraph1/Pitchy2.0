@@ -4,7 +4,7 @@ class Config:
     '''
     General configuration parent class
     '''
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://jidraph:6720@localhost/pitchy'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://jidraph:6720@localhost:5432/pitchy'
     SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
@@ -26,7 +26,7 @@ class DevConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://jidraph:6720@localhost/pitchy'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://jidraph:6720@localhost:5432/pitchy'
     SECRET_KEY = 'thisismysecret'
     DEBUG = True
 
